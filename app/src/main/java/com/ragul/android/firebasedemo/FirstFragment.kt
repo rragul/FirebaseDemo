@@ -33,6 +33,9 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.imageView.setOnClickListener{
+            binding.imageView
+        }
 
         binding.firstName.setOnClickListener {
             binding.firstName.text = null
@@ -46,8 +49,11 @@ class FirstFragment : Fragment() {
             binding.age.text = null
         }
 
-        binding.button.setOnClickListener {
+        binding.registerButton.setOnClickListener {
             saveData()
+
+        }
+        binding.viewButton.setOnClickListener{
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
